@@ -17,9 +17,9 @@ const App = () => {
     <ScrollView style={styles.scrollView}>
       <Header />
       <View>
-        <SingleNote />
-        <SingleNote />
-        <SingleNote />
+        <SingleNote number="1" />
+        <SingleNote number="2" />
+        <SingleNote number="3" />
       </View>
     </ScrollView>
   );

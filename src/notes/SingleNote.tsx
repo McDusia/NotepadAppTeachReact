@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const SingleNote = () => {
+const SingleNote = (props) => {
   return (
     <View>
-      <Text>Single Note</Text>
+      <Text>Single Note {props.number}</Text>
     </View>
   );
 };

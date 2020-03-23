@@ -1,16 +1,10 @@
 import React from 'react';
 import {
-  StyleProp,
-  StyleSheet,
-  Text,
-  TextStyle,
-  TouchableOpacity,
-  View,
-  ViewStyle,
+  StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity,
+  View, ViewStyle,
 } from 'react-native';
 
 export interface IButtonProps {
-  text: string;
   action: any;
   style?: StyleProp<ViewStyle>;
 }
@@ -18,7 +12,7 @@ export interface IButtonProps {
 export const Button = (props: IButtonProps) => (
   <TouchableOpacity onPress={props.action}>
     <View style={[styles.actionButton, props.style]}>
-      <Text style={styles.buttonText}>{props.text}</Text>
+      <Text style={styles.buttonText}>+</Text>
     </View>
   </TouchableOpacity>
 );
@@ -35,9 +29,13 @@ const styles = StyleSheet.create<IStyle>({
     width: 64,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#5b5a69',
+    color: 'white',
   },
   buttonText: {
     fontSize: 50,
     fontWeight: 'bold',
+    color: 'white',
+    paddingBottom: 5,
   },
 });

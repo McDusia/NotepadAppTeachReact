@@ -1,37 +1,15 @@
-// TODO add header with info about app and plus sign
-// TODO add styling and layout
-
 import React from 'react';
-import {
-    ScrollView,
-    StyleSheet,
-    View,
-    ViewStyle
-} from 'react-native';
-import SingleNote from './notes/SingleNote';
+import {View} from 'react-native';
 import Header from './header/Header';
-
+import NoteList from './notes/NoteList';
 
 const App = () => {
   return (
-    <ScrollView style={styles.scrollView}>
+    <View>
       <Header />
-      <View>
-        <SingleNote title="Shopping" />
-        <SingleNote title="Go to library" />
-        <SingleNote title="Laundry" />
-      </View>
-    </ScrollView>
+      <NoteList />
+    </View>
   );
 };
-
-interface Style {
-  scrollView: ViewStyle;
-}
-
-const styles = StyleSheet.create<Style>({
-  scrollView: {
-  },
-});
 
 export default App;

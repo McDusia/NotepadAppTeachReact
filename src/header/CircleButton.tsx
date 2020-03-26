@@ -6,7 +6,7 @@ import {
   TextStyle,
   TouchableOpacity,
   View,
-  ViewStyle
+  ViewStyle,
 } from 'react-native';
 import {Colors} from '../styles/Colors';
 
@@ -15,7 +15,7 @@ export interface IButtonProps {
   style?: StyleProp<ViewStyle>;
 }
 
-export const Button = (props: IButtonProps) => (
+export const CircleButton = (props: IButtonProps) => (
   <TouchableOpacity onPress={props.action}>
     <View style={[styles.actionButton, props.style]}>
       <Text style={styles.buttonText}>+</Text>
@@ -23,12 +23,12 @@ export const Button = (props: IButtonProps) => (
   </TouchableOpacity>
 );
 
-interface IStyle {
+interface Style {
   actionButton: ViewStyle;
   buttonText: TextStyle;
 }
 
-const styles = StyleSheet.create<IStyle>({
+const styles = StyleSheet.create<Style>({
   actionButton: {
     borderRadius: 64,
     height: 64,

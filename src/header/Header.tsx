@@ -1,67 +1,49 @@
-import React from 'react';
-import {StyleSheet, Text, TextStyle, View, ViewStyle,
-TouchableHighlight, Modal } from 'react-native';
-import {Button} from './Button';
+import React, {useState} from 'react';
+import {StyleSheet, Text, TextStyle, View, ViewStyle} from 'react-native';
+import {CircleButton} from './CircleButton';
 import {Colors} from '../styles/Colors';
+import NewNoteModal from './NewNoteModal';
 
-var modalVisible = false;
-
-function setModalVisible(visible) {
-    modalVisible = false;
-  };
+const HEADER_TITLE = 'Notepad';
 
 const Header = () => {
-    return (
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const renderModal = () => {
+    return modalVisible ? (
+      <NewNoteModal onModalClose={() => setModalVisible(false)} />
+    ) : null;
+  };
+
+  return (
     <View style={styles.container}>
-      <Text style={styles.text}>Your notepad</Text>
+      <Text style={styles.text}>{HEADER_TITLE}</Text>
       <View style={styles.buttonContainer}>
-        <Button
-          action={onPressAction}
-          style={styles.button}>
-         </Button>
+        <CircleButton
+          action={() => setModalVisible(true)}
+          style={styles.button}
+        />
       </View>
-
-      <Modal animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                >
-                <View style={{marginTop: 22}}>
-                  <View>
-                    <Text>Hello World!</Text>
-
-                    <TouchableHighlight
-                      onPress={() => {
-                        setModalVisible(!modalVisible);
-                      }}>
-                      <Text>Hide Modal</Text>
-                    </TouchableHighlight>
-                  </View>
-                </View>
-              </Modal>
-
+      {renderModal()}
     </View>
   );
 };
 
-onPressAction = () => {
-    modalVisible = false;
-};
-
-interface IStyle {
+interface Style {
   container: ViewStyle;
   button: ViewStyle;
   buttonContainer: ViewStyle;
   text: TextStyle;
 }
 
-const styles = StyleSheet.create<IStyle>({
+const styles = StyleSheet.create<Style>({
   container: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    padding: 10,
     backgroundColor: Colors.PURPLE,
     color: Colors.LIGHT_WHITE,
+    paddingTop: 20,
   },
   button: {
     backgroundColor: Colors.GREY,
@@ -75,7 +57,6 @@ const styles = StyleSheet.create<IStyle>({
   text: {
     flex: 1,
     textAlign: 'center',
-    fontSize: 24,
     color: Colors.LIGHT_WHITE,
     fontSize: 30,
     fontWeight: 'bold',

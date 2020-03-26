@@ -2,7 +2,11 @@
 // TODO add styling and layout
 
 import React from 'react';
-import { ScrollView, StyleSheet, View, ViewStyle
+import {
+    ScrollView,
+    StyleSheet,
+    View,
+    ViewStyle
 } from 'react-native';
 import SingleNote from './notes/SingleNote';
 import Header from './header/Header';
@@ -13,9 +17,9 @@ const App = () => {
     <ScrollView style={styles.scrollView}>
       <Header />
       <View>
-        <SingleNote number="Shopping" />
-        <SingleNote number="Go to library" />
-        <SingleNote number="Laundry" />
+        <SingleNote title="Shopping" />
+        <SingleNote title="Go to library" />
+        <SingleNote title="Laundry" />
       </View>
     </ScrollView>
   );

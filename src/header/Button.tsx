@@ -1,8 +1,14 @@
 import React from 'react';
 import {
-  StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity,
-  View, ViewStyle,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  View,
+  ViewStyle
 } from 'react-native';
+import {Colors} from '../styles/Colors';
 
 export interface IButtonProps {
   action: any;
@@ -29,13 +35,13 @@ const styles = StyleSheet.create<IStyle>({
     width: 64,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#5b5a69',
+    backgroundColor: Colors.GREY,
     color: 'white',
   },
   buttonText: {
     fontSize: 50,
     fontWeight: 'bold',
-    color: 'white',
+    color: Colors.WHITE,
     paddingBottom: 5,
   },
 });

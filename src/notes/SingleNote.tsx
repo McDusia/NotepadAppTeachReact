@@ -1,11 +1,15 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {
+    Text,
+    View,
+    StyleSheet
+} from 'react-native';
+import {Colors} from '../styles/Colors';
 
-
-const SingleNote = (props) => {
+const SingleNote = (props: string) => {
   return (
     <View>
-      <Text style={styles.titleText}>{props.number}</Text>
+      <Text style={styles.titleText}>{props.title}</Text>
     </View>
   );
 };
@@ -14,10 +18,10 @@ const styles = StyleSheet.create<Style>({
   titleText: {
      fontSize: 20,
      fontWeight: 'bold',
-     backgroundColor: '#5b5a69',
+     backgroundColor: Colors.GREY,
      color: 'white',
      borderTopWidth: 4,
-     borderColor: 'pink',
+     borderColor: Colors.PINK,
      padding: 20,
   },
 });

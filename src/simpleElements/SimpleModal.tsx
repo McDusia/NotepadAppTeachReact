@@ -11,21 +11,24 @@ import {Colors} from '../styles/Colors';
 import {Button} from './Button';
 
 interface ModalProps {
-  onModalClose: () => void;
-  closeText?: string;
   title: string;
-  proceedText?: string;
+  closeText?: string;
+  onModalClose: () => void;
+  proceedButton: {
+    text: string;
+    onClickAction: () => void;
+  };
 }
 
 const CLOSE_TEXT = 'Close';
 
 const SimpleModal: FC<ModalProps> = props => {
   const renderAdditionalButton = () => {
-    return props.proceedText ? (
+    return props.proceedButton ? (
       <Button
         containerStyle={styles.button}
-        action={() => {}}
-        text={props.proceedText}
+        action={props.proceedButton.onClickAction}
+        text={props.proceedButton.text}
       />
     ) : null;
   };

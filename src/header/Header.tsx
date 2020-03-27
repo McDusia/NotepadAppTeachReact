@@ -38,7 +38,6 @@ interface Style {
 
 const styles = StyleSheet.create<Style>({
   container: {
-    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.PURPLE,

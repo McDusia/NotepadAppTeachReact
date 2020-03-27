@@ -1,14 +1,18 @@
 import React from 'react';
 import {View} from 'react-native';
 import Header from './header/Header';
-import NoteList from './notes/NoteList';
+import NotesList from './notes/NotesList';
+import {Provider} from 'react-redux';
+import store from './redux/store';
 
 const App = () => {
   return (
-    <View>
-      <Header />
-      <NoteList />
-    </View>
+    <Provider store={store}>
+      <View>
+        <Header />
+        <NotesList />
+      </View>
+    </Provider>
   );
 };
 

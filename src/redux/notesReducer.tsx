@@ -1,13 +1,13 @@
 import {ADD_NOTE_TYPE} from './notesActions';
 import {AnyAction} from 'redux';
 
-export type SingleNote = {
+export type SingleNoteType = {
   title: string;
   content: string;
 };
 
 export interface NotesState {
-  notes: Array<SingleNote>;
+  notes: Array<SingleNoteType>;
 }
 
 export const initialNotesState: NotesState = {

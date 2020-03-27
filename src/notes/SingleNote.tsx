@@ -1,13 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, TextStyle, View, ViewStyle} from 'react-native';
 import {Colors} from '../styles/Colors';
+import {SingleNoteType} from '../redux/notesReducer';
 
-interface SingleNoteProps {
-  title: string;
-  content: string;
-}
-
-const SingleNote = (props: SingleNoteProps) => {
+const SingleNote = (props: SingleNoteType) => {
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>{props.title}</Text>

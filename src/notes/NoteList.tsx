@@ -43,7 +43,7 @@ const styles = StyleSheet.create<Style>({
     flex: 0,
     backgroundColor: Colors.GREY,
     width: '100%',
-    height: '100%',
+    height: '88%',
   },
 });
 

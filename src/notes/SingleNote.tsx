@@ -29,8 +29,8 @@ const styles = StyleSheet.create<Style>({
   container: {
     marginLeft: 10,
     marginRight: 10,
-    marginBottom: 5,
-    marginTop: 5,
+    marginBottom: 10,
+    marginTop: 10,
     backgroundColor: Colors.LIGHT_WHITE,
   },
   titleText: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create<Style>({
     backgroundColor: Colors.WHITE,
     marginLeft: 20,
     marginRight: 20,
-    marginBottom: 5,
+    marginBottom: 10,
   },
 });
 

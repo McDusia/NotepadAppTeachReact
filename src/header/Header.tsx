@@ -43,7 +43,7 @@ const styles = StyleSheet.create<Style>({
     alignItems: 'center',
     backgroundColor: Colors.PURPLE,
     color: Colors.LIGHT_WHITE,
-    paddingTop: 20,
+    paddingTop: 0,
   },
   button: {
     backgroundColor: Colors.GREY,

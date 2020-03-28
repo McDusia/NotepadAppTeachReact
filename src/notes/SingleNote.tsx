@@ -35,7 +35,6 @@ const styles = StyleSheet.create<Style>({
   },
   titleText: {
     fontSize: 20,
-    borderTopWidth: 4,
     marginTop: 10,
     marginLeft: 20,
     marginBottom: 10,

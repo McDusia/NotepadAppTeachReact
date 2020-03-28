@@ -3,7 +3,7 @@ import {FlatList, StyleSheet, View, ViewStyle} from 'react-native';
 import SingleNote from './SingleNote';
 import {Colors} from '../styles/Colors';
 import {useSelector} from 'react-redux';
-import {NotesState} from '../redux/notesReducer';
+import {NotesState, SingleNoteType} from '../redux/notesReducer';
 
 const NotesList = () => {
   const notes = useSelector((state: NotesState) => state.notes);

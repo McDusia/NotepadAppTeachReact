@@ -8,13 +8,17 @@ import {NotesState} from '../redux/notesReducer';
 const NotesList = () => {
   const notes = useSelector((state: NotesState) => state.notes);
 
-  const renderItem = (item: any) => {
+  const renderItem = (item: any, index: number) => {
     return <SingleNote title={item.item.title} content={item.item.content} />;
   };
 
   return (
     <View style={styles.container}>
-      <FlatList data={notes} renderItem={renderItem} />
+      <FlatList
+        data={notes}
+        renderItem={renderItem}
+        keyExtractor={(item, index) => index.toString()}
+       />
     </View>
   );
 };
@@ -28,7 +32,7 @@ const styles = StyleSheet.create<Style>({
     flex: 0,
     backgroundColor: Colors.GREY,
     width: '100%',
-    height: '100%',
+    height: '88%',
   },
 });
 

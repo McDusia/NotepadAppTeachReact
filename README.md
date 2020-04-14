@@ -12,7 +12,7 @@ npx react-native init NotepadAppTeachReact --template react-native-template-type
 - Run Xcode ( install additional platform tools )
 
 
-###Android
+### Android
 
 Install Android Studio, Android SDK
 

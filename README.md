@@ -49,7 +49,7 @@ android:
 # Instrukcja
 Zadanie polega na przygotowaniu prostej aplikacji react-native słuzacej do dodawania notatek. 
 
-## Instrukcja - Zadanie 1 
+## Instrukcja
 
 Rozpoczynamy od odpalenia aplikacji ( według instrukcji opisanej powyżej). Przeglądnij aktualny kod.
 
@@ -230,24 +230,63 @@ Celem tej części jest implementacja funkcjonalności dodawania notatek.
    
    ``` const notes = useSelector((state: NotesState) => state.notes);```
    
-   E. W `App.tsx` uzywamy Provider:
+   F. W `App.tsx` uzywamy Provider:
     
-   ```
-   const App = () => {
-     return (
-       <Provider store={store}>
-         <View>
-           <Header />
-           <NotesList />
-         </View>
-       </Provider>
-     );
-   };
-   ```
-   F. Nowo dodane notatki powinny wyświetlać się na liście notatek.
+       ```
+       const App = () => {
+         return (
+           <Provider store={store}>
+             <View>
+               <Header />
+               <NotesList />
+             </View>
+           </Provider>
+         );
+       };
+       ```
+   G. Nowo dodane notatki powinny wyświetlać się na liście notatek.
    
+   **Przykładowa implementacja tego zadania znajduje się na gałęzi `Add_basic_redux`.**
+   
+  4. Dodanie persystencji. Obecnie po odświeżeniu aplikacji ( Command + R na iOS, command + M/refresh - android )lista notatek jest czyszczona.
+  
+      `yarn add @react-native-community/async-storage`
+      
+      `react-native link @react-native-community/async-storage`
+      
+      `yarn add redux-persist`
+      
+      - https://github.com/rt2zz/redux-persist
+      
+      Przykładowe rozwiązanie:
+       - `store.ts`:
+        ```
+     const persistConfig = {
+             storage: AsyncStorage,
+             key: 'notes',
+           };
+     const persistedReducer = persistReducer(persistConfig, notesReducer);
+     
+     export const store = createStore(persistedReducer);
+     export const persistor = persistStore(store);
+     ```
+        - `App.tsx`:
+       ```
+       <PersistGate persistor={persistor}>
+               <View>
+                 <Header />
+                 <NotesList />
+               </View>
+       </PersistGate>
+       ```
+       
+   Po przeładowaniu aplikacji, wcześniej dodane notatki powinny być ciągle widoczne.
+       
+   Przykładowa implementacja tego zadania znajduje się na gałęzi `Persisted_redux_state`
+       
+  
+  
    
     
-    
-Przykładowa implementacja tego zadania znajduje się na gałęzi `Add_basic_redux`.
+   
 

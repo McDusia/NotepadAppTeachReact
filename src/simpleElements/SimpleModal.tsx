@@ -24,13 +24,13 @@ const CLOSE_TEXT = 'Close';
 
 const SimpleModal: FC<ModalProps> = props => {
   const renderAdditionalButton = () => {
-    return props.proceedButton.text ? (
+    return (
       <Button
         containerStyle={styles.button}
         action={props.proceedButton.onClickAction}
         text={props.proceedButton.text}
       />
-    ) : null;
+    );
   };
 
   return (

@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, TextStyle, View, ViewStyle} from 'react-native';
-import {CircleButton} from './CircleButton';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TextStyle,
+  View,
+  ViewStyle,
+} from 'react-native';
 import {Colors} from '../styles/Colors';
 import NewNoteModal from './NewNoteModal';
-import {Platform} from 'react-native';
+import {CircleButton} from './CircleButton';
 
 const HEADER_TITLE = 'Notepad';
 

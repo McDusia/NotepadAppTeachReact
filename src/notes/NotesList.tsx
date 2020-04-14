@@ -3,7 +3,7 @@ import {ScrollView, StyleSheet, ViewStyle} from 'react-native';
 import SingleNote from './SingleNote';
 import {Colors} from '../styles/Colors';
 
-const NoteList = () => {
+const NotesList = () => {
   return (
     <ScrollView style={styles.container}>
       <SingleNote
@@ -47,4 +47,4 @@ const styles = StyleSheet.create<Style>({
   },
 });
 
-export default NoteList;
+export default NotesList;

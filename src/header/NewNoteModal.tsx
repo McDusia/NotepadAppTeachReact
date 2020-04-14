@@ -71,6 +71,7 @@ const styles = StyleSheet.create<Style>({
   },
   multilineInput: {
     height: 200,
+    textAlignVertical: 'top',
   },
   container: {
     margin: 5,

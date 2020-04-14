@@ -1,13 +1,13 @@
 import React from 'react';
 import {View} from 'react-native';
 import Header from './header/Header';
-import NoteList from './notes/NoteList';
+import NotesList from './notes/NotesList';
 
 const App = () => {
   return (
     <View>
       <Header />
-      <NoteList />
+      <NotesList />
     </View>
   );
 };

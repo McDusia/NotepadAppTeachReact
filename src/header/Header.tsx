@@ -3,6 +3,7 @@ import {StyleSheet, Text, TextStyle, View, ViewStyle} from 'react-native';
 import {CircleButton} from './CircleButton';
 import {Colors} from '../styles/Colors';
 import NewNoteModal from './NewNoteModal';
+import {Platform} from 'react-native';
 
 const HEADER_TITLE = 'Notepad';
 
@@ -38,12 +39,11 @@ interface Style {
 
 const styles = StyleSheet.create<Style>({
   container: {
-    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.PURPLE,
     color: Colors.LIGHT_WHITE,
-    paddingTop: 0,
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,
   },
   button: {
     backgroundColor: Colors.GREY,

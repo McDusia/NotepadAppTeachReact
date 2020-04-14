@@ -13,7 +13,7 @@ const NewNoteModal = (props: ModalProps) => {
     <SimpleModal
       onModalClose={props.onModalClose}
       title={TITLE}
-      proceedText={ADD_NEW_NOTE_TEXT}
+      proceedButton={{text: ADD_NEW_NOTE_TEXT, onClickAction: () => {}}}
     />
   );
 };
